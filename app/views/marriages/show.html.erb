@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Husband:</strong>
+  <%= @marriage.husband %>
+</p>
+
+<p>
+  <strong>Wife:</strong>
+  <%= @marriage.wife %>
+</p>
+
+<p>
+  <strong>Start year:</strong>
+  <%= @marriage.start_year %>
+</p>
+
+<p>
+  <strong>End year:</strong>
+  <%= @marriage.end_year %>
+</p>
+
+<%= link_to 'Edit', edit_marriage_path(@marriage) %> |
+<%= link_to 'Back', marriages_path %>
