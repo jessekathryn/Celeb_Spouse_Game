@@ -22,3 +22,19 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+---
+
+# Docker
+
+run the following for *initial* docker build
+
+- `docker-compose build app`
+
+- `docker-compose run --rm app bin/rails webpacker:install`
+
+- `docker-compose up -d database`
+
+- `docker-compose run --rm app bin/rails db:migrate`
+
+- `docker-compose up`
