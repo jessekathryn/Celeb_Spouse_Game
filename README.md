@@ -37,4 +37,6 @@ run the following for *initial* docker build
 
 - `docker-compose run --rm app bin/rails db:migrate`
 
+- `docker-compose run --rm app bin/rails db:seed`
+
 - `docker-compose up`

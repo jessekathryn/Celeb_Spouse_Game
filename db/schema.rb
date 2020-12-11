@@ -16,19 +16,18 @@ ActiveRecord::Schema.define(version: 2020_12_05_215637) do
   enable_extension "plpgsql"
 
   create_table "celebrities", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.integer "birth_year"
     t.string "fame_type"
-    t.string "picture"
-    t.string "gender"
+    t.string "gender", null: false
     t.string "info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "marriages", force: :cascade do |t|
-    t.string "husband"
-    t.string "wife"
+    t.string "husband", null: false
+    t.string "wife", null: false
     t.string "start_year"
     t.string "end_year"
     t.datetime "created_at", precision: 6, null: false
