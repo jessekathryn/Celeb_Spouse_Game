@@ -21,6 +21,4 @@ RUN bundle install
 
 COPY . /usr/src/app/
 
-RUN bin/rails webpacker:install
-
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
