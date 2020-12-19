@@ -1,1 +1,12 @@
 <h1>Welcome to Celebrity Trivia!</h1>
+
+<br>
+<p> Who is <%= @celeb.name %> married to?</p>
+<br><br>
+<ul>
+<% @random_spouses.each do |t| %>
+  <li>
+    <%= t.name %>
+  </li>
+<% end %>
+</ul>
