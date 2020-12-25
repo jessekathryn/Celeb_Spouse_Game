@@ -1,14 +1,25 @@
+
 <div class="jumbotron">
   <h1>Welcome to Celebrity Trivia!</h1>
 </div>
 
+<div class="container">
+<% flash.each do |message_type, msg| %>
+  <div class="alert alert-<%= message_type %>"><%= msg %></div>
+<% end %>
+
 <br>
 <p> Who is <%= @celeb.name %> married to?</p>
 <br><br>
-<ul>
-<% @random_spouses.each do |t| %>
-  <li>
-    <%= t.name %>
-  </li>
+
+
+<%= form_tag do %> 
+  <%= hidden_field_tag :spouse_id, @celeb.id %>
+  <% @random_spouses.each do |t| %>
+    <%= radio_button_tag(:guess, t.id) %> <%= label_tag(t.name) %> <br>
+  <% end %>
+  <%= submit_tag("Guess!") %>
+
 <% end %>
-</ul>
+
+</div>
