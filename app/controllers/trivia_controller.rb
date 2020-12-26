@@ -28,4 +28,17 @@ class TriviaController < ApplicationController
 
     end
 
+    def guess
+        @spouse1 = params[:spouse_id]
+        @spouse2 = params[:guess]
+        if Marriage.find_by(husband: params[:spouse_id], wife: params[:guess])
+            flash[:success] = "Correct"
+        elsif Marriage.find_by(husband: params[:guess], wife: params[:spouse_id])
+            flash[:success] = "Correct"
+        else
+            flash[:danger] = "Wrong"
+        end
+        redirect_to root_url
+    end
+
 end
