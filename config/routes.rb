@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   post '/', to: 'trivia#guess'
   resources :marriages
   resources :celebrities
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # devise - do not allow signup yet - only admins should be able to login in (for now)
+  devise_for :users, skip: :registrations
+  
 end

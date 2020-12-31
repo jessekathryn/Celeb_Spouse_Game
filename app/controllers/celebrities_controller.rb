@@ -1,4 +1,5 @@
 class CelebritiesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
 
   # GET /celebrities
