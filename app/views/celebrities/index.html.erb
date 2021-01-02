@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Birth year</th>
       <th>Fame type</th>
-      <th>Picture</th>
       <th>Gender</th>
       <th>Info</th>
       <th colspan="3"></th>
@@ -18,10 +18,10 @@
   <tbody>
     <% @celebrities.each do |celebrity| %>
       <tr>
+        <td><%= celebrity.id %></td>
         <td><%= celebrity.name %></td>
         <td><%= celebrity.birth_year %></td>
         <td><%= celebrity.fame_type %></td>
-        <td><%= celebrity.picture %></td>
         <td><%= celebrity.gender %></td>
         <td><%= celebrity.info %></td>
         <td><%= link_to 'Show', celebrity %></td>
