@@ -1,7 +1,7 @@
-Project
+# Project
 project.com
 
-Install
+# Install
 Clone the repository
 git clone git@github.com:https://github.com/jessekathryn/Celeb_Spouse_Game
 cd project
@@ -21,7 +21,7 @@ Using Figaro:
 
 See config/application.yml.sample and contact the developer
 
-Initialize the database
+# Initialize the database
 rails db:create db:migrate db:seed
 Add heroku remotes
 Using Heroku CLI:
@@ -33,7 +33,6 @@ rails s
 Deploy
 With Heroku pipeline (recommended)
 Push to Heroku staging remote:
-
 git push heroku-staging
 Go to the Heroku Dashboard and promote the app to production or use Heroku CLI:
 
