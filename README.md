@@ -1,29 +1,47 @@
-# README
+Project
+project.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install
+Clone the repository
+git clone git@github.com:https://github.com/jessekathryn/Celeb_Spouse_Game
+cd project
+Check your Ruby version
+ruby -v
+The output should start with something like ruby 2.5.1
 
-Things you may want to cover:
+If not, install the right ruby version using rbenv (it could take a while):
 
-* Ruby version
+rbenv install 2.5.1
+Install dependencies
+Using Bundler and Yarn:
 
-* System dependencies
+bundle && yarn
+Set environment variables
+Using Figaro:
 
-* Configuration
+See config/application.yml.sample and contact the developer
 
-* Database creation
+Initialize the database
+rails db:create db:migrate db:seed
+Add heroku remotes
+Using Heroku CLI:
 
-* Database initialization
+heroku git:remote -a project
+heroku git:remote --remote heroku-staging -a project-staging
+Serve
+rails s
+Deploy
+With Heroku pipeline (recommended)
+Push to Heroku staging remote:
 
-* How to run the test suite
+git push heroku-staging
+Go to the Heroku Dashboard and promote the app to production or use Heroku CLI:
 
-* Services (job queues, cache servers, search engines, etc.)
+heroku pipelines:promote -a project-staging
+Directly to production (not recommended)
+Push to Heroku production remote:
 
-* Deployment instructions
-
-* ...
-
----
+git push heroku
 
 # Docker
 
