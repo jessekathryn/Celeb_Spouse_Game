@@ -21,4 +21,9 @@ RUN bundle install
 
 COPY . /usr/src/app/
 
+# Run yarn install to install JavaScript dependencies.
+RUN yarn install --check-files
+
+RUN DATABASE_HOST=blah DATABASE_USER=blah POSTGRES_USER=blah POSTGRES_PASSWORD=blah POSTGRES_DB=blah bin/rails webpacker:install
+
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
