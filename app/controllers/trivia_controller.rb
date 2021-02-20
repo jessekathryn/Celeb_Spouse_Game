@@ -9,7 +9,7 @@ class TriviaController < ApplicationController
             @celeb = Celebrity.find(random_couple.husband)
             wife = Celebrity.find(random_couple.wife)
             spouses<< Celebrity.find(random_couple.wife)
-            fakes = Celebrity.where.not(:name => wife.name, :gender => "male").limit(3).order('RANDOM()')
+            fakes = Celebrity.where.not(:name => wife.name).where.not(:gender => "male").limit(3).order('RANDOM()')
 
             
         else
@@ -17,7 +17,7 @@ class TriviaController < ApplicationController
             @celeb = Celebrity.find(random_couple.wife)
             husband = Celebrity.find(random_couple.husband)
             spouses << Celebrity.find(random_couple.husband)
-            fakes = Celebrity.where.not(:name => husband.name, :gender => "female").limit(3).order('RANDOM()')
+            fakes = Celebrity.where.not(:name => husband.name).where.not(:gender => "female").limit(3).order('RANDOM()')
 
         end
 

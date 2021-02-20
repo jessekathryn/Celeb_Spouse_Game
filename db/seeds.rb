@@ -16,8 +16,8 @@ rr = Celebrity.new(
 rr.save
 
 sj = Celebrity.new(
-  name: "Scarlett Johansson",
-  birth_year: 1984,
+  name: "Blake Lively",
+  birth_year: 1987,
   gender: "female"
 )
 sj.save
