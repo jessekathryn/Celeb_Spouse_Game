@@ -24,4 +24,8 @@ RUN yarn install
 
 COPY . /usr/src/app/
 
+RUN bin/rails RAILS_ENV=production SECRET_KEY_BASE=nottherealkey DATABASE_HOST=foo POSTGRES_USER=foo POSTGRES_PASSWORD=foo POSTGRES_DB=foo assets:precompile
+
+EXPOSE 3000
+
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
