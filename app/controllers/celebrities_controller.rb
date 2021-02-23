@@ -70,6 +70,6 @@ class CelebritiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def celebrity_params
-      params.require(:celebrity).permit(:image, :name, :birth_year, :fame_type, :picture, :gender, :info)
+      params.require(:celebrity).permit(:avatar, :name, :birth_year, :fame_type, :picture, :gender, :info)
     end
 end
