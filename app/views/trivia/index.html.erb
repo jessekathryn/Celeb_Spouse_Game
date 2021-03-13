@@ -1,7 +1,25 @@
 
-<div class="jumbotron">
-  <h1>Welcome to Celebrity Trivia!</h1>
+<div class="jumbotron" style="padding-bottom: 0; margin-bottom: 0;">
+  <h1 style="padding-bottom: 0; margin-bottom: 0;">Welcome to Celebrity Trivia!</h1>
+
+ 
+
 </div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="nav navbar-nav">
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <a class="nav-link" href="/celebrities">Login</a>
+      </li>
+    <% end %>
+    
+  </ul>
+</nav>
 
 <div class="container">
 <% flash.each do |message_type, msg| %>
