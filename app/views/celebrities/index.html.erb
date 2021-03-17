@@ -18,10 +18,13 @@
   <tbody>
     <% @celebrities.each do |celebrity| %>
       <tr>
-      <% if celebrity.avatar.attached? %> 
-        <td> <%= image_tag celebrity.avatar, style: "width: 50px; height: 50px; display:block" %>  </td> 
-      <% end %>
+
         <td><%= celebrity.id %></td>
+        <% if celebrity.avatar.attached? %> 
+          <td> <%= image_tag celebrity.avatar, style: "width: 50px; height: 50px; display:block" %></td>
+        <% else %>
+          <td></td>
+        <% end %>
         <td><%= celebrity.name %></td>
         <td><%= celebrity.birth_year %></td>
         <td><%= celebrity.fame_type %></td>
