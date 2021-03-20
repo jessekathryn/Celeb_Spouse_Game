@@ -1,13 +1,13 @@
 
 <div class="jumbotron" style="padding-bottom: 0; margin-bottom: 0;">
-  <h1 style="padding-bottom: 0; margin-bottom: 0;">Welcome to Celebrity Trivia!</h1>
+  <h1 style="padding-bottom: 0; margin-bottom: 0;">Welcome to Celebrity Marriage Trivia!</h1>
 
  
 
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <ul class="nav navbar-nav">
+  <ul class="nav navbar-nav ml-auto">
     <% if user_signed_in? %>
       <li class="nav-item">
         <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -23,13 +23,21 @@
 
 <div class="container">
 <% flash.each do |message_type, msg| %>
-  <div class="alert alert-<%= message_type %>"><%= msg %></div>
+  <div class="alert alert-<%= message_type %>", style="width: 200px;"><%= msg %></div>
 <% end %>
 
-<br>
-<p> Who is <%= @celeb.name %> married to?</p>
-<br><br>
 
+
+<div class="card", style="width: 200px;">
+  <div class="card-header">
+    Who is <br><b><%= @celeb.name %></b><br> married to?
+  </div>
+  <% if @celeb.avatar.attached? %>
+    <%= image_tag url_for(@celeb.avatar) %>
+  <% else %>
+    <%= image_tag 'unknown1.jpg' %>
+  <% end %>
+</div>
 
 <%= form_tag do %> 
   <%= hidden_field_tag :spouse_id, @celeb.id %>

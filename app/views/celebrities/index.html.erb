@@ -23,7 +23,7 @@
         <% if celebrity.avatar.attached? %> 
           <td> <%= image_tag celebrity.avatar, style: "width: 50px; height: 50px; display:block" %></td>
         <% else %>
-          <td></td>
+          <td><%= image_tag 'unknown1.jpg', style: "width: 50px; height: 50px; display:block" %></td>
         <% end %>
         <td><%= celebrity.name %></td>
         <td><%= celebrity.birth_year %></td>
