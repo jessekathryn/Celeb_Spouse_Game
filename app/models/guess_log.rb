@@ -1,0 +1,2 @@
+class GuessLog < ApplicationRecord
+end

@@ -31,13 +31,21 @@ class TriviaController < ApplicationController
     def guess
         @spouse1 = params[:spouse_id]
         @spouse2 = params[:guess]
+        @guess = GuessLog.new()
+        @guess.spouse1_id = params[:spouse_id]
+        @guess.spouse_guess = params[:guess]
+        @guess.guesser_ip = request.remote_ip
         if Marriage.find_by(husband: params[:spouse_id], wife: params[:guess])
+            @guess.correct = true
             flash[:success] = "Correct"
         elsif Marriage.find_by(husband: params[:guess], wife: params[:spouse_id])
+            @guess.correct = true
             flash[:success] = "Correct"
         else
+            @guess.correct = false
             flash[:danger] = "Wrong"
         end
+        @guess.save
         redirect_to root_url
     end
 
